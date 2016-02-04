@@ -1,4 +1,4 @@
-werdist <- function(data, ...) { #  series must be on rows 
+werdist <- function(data, nvoice = 4) { #  series must be on rows 
 
 n     <- nrow(data)
 delta <- ncol(data)
@@ -6,10 +6,10 @@ delta <- ncol(data)
 ## 2. Compute WER distance matrix ####
 
 ## _.a CWT -- Filtering the lowest freqs (>6m) ####
-if(missing(nvoice)) nvoice <- 4
-if(missing(noctave4)) noctave4 <- adjust.noctave(N = delta, dt = 1, s0 = 2,
+
+noctave4 <- adjust.noctave(N = delta, dt = 1, s0 = 2,
                                                 tw = 0, noctave = 13)
-if(missing(scalevector4)) scalevector4  <- 2^(4:(noctave4 * nvoice) / nvoice) * 2
+scalevector4  <- 2^(4:(noctave4 * nvoice) / nvoice) * 2
 
 lscvect4      <- length(scalevector4)
 lscvect <- lscvect4  
