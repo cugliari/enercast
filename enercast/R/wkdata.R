@@ -20,7 +20,7 @@ wkdata <- function(X, p, gr, J){
 
   res <- list(X = X1, S0 = X2[2^J, ], D0 = X2[- (2^J), ],
               p = p, J = J, gr = gr)
-
+  class(res) <- "wkdata"
   return(res)
 }
 

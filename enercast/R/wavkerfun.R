@@ -2,7 +2,7 @@ wavkerfun <-  function(obj, dist = 1, r, H, EPS = 1e-6){
 
   orig <- obj$X
   n    <- ncol(obj$X)
-  p    <- nrow(obj$D0)
+  p    <- obj$p
   x    <- obj$D0
   y    <- obj$D0
   c0   <- obj$S0
