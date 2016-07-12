@@ -34,7 +34,7 @@ hong(data)
   Hong, T. and Pinson, P.and Fan, S. 2014 Global energy forecasting competition
   2012. \emph{International Journal of Forecasting}, \bold{30(2)}:357--363
 }
-\author{Todos nosotros}
+\author{Jairo Cugliari, Andres Castrillejo, Fernando Massa}
 
 \seealso{ \link[stats]{lm} \link{predict.hong}}
-\examples{}
+

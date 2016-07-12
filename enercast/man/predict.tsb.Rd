@@ -9,5 +9,5 @@
 }
 \details{poner detalles}
 \value{vector of predicted values}
-\author{Todos Nosotros}
+\author{Jairo Cugliari, Andres Castrillejo, Fernando Massa}
 \seealso{\link{tsb} \link{makeARIMA}}

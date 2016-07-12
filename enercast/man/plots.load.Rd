@@ -31,5 +31,5 @@ plot.temp(data, group=NULL,...)
   \item{nw}{Number of weeks to plot} 
   \item{\dots}{further arguments to be passed to 'plot'}
 }
-\details{}
-\author{Todos nosotros}
+\author{Jairo Cugliari, Andres Castrillejo, Fernando Massa}
+

@@ -3,10 +3,10 @@ Type: Package
 Title: Electrical energy forecast tools
 Version: 0.1
 Date: 2015-11-19
-Authors@R:c(person('Jairo Cugliari',role=c('aut','cre'),email='Jairo.Cugliari@univ-lyon2.fr'),person('Andres Castrillejo',role='aut',email='castrillejoandres@gmail.com'),person('Fernando Massa',role='aut',email='fmassa@iesta.eud.uy'),person('JC',role='aut',email='jc@jc.com'),person('ari',role='ctb'),person('iari',role='ctb')) 
+Authors@R:c(person('Jairo Cugliari',role=c('aut','cre'),email='Jairo.Cugliari@univ-lyon2.fr'),person('Andres Castrillejo',role='aut',email='castrillejoandres@gmail.com'),person('Fernando Massa',role='aut',email='fmassa@iesta.eud.uy')) 
 Author:Jairo Cugliari, Andres Castrillejo, Fernando Massa
 Maintainer: Jairo Cugliari <Jairo.Cugliari@univ-lyon2.fr>
-Imports: hexbin, RColorBrewer, wavethresh, Rcpp, Rwave, cluster
+Imports: hexbin, RColorBrewer, FKF, wavethresh, Rcpp, Rwave, cluster, doParallel, randomForest
 Description: The package provides with description, modeling, prediction and diagnostic tools to analyze electricity demand data.
 VignetteBuilder: knitr
 Suggests: knitr 

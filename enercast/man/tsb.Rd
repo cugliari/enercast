@@ -13,7 +13,6 @@ STLF}
   \item{s1, s2}{Seasonal frequencies. type numeric.}
   \item{k}{number of lags}
 }
-\details{}
 \value{ A list with ARIMA estimated model
  \item{ar}{(reg=ar,est1=AR1,est2=AR2)}
  \item{ma}{(reg=ma,est1=MA1,est2=MA2)}
@@ -25,7 +24,7 @@ STLF}
 
 }
 \references{Brockwell, P.J.and Davis, R.A. 1991 \emph{Time Series: theory and methods} 2nd ed. Springer.}
-\author{Todos Nosotros}
+\author{Jairo Cugliari, Andres Castrillejo, Fernando Massa}
 \seealso{\code{\link{predict.tsb}}}
 
 

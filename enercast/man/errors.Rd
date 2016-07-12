@@ -28,6 +28,7 @@ pdad(y, yhat)
 \references{
   Hyndman, R.J. and Athanasopoulos, G. 2014 \emph{Forecasting: principles and practice}. OTexts.
 }
-\author{Todos nosotros}
+\author{Jairo Cugliari, Andres Castrillejo, Fernando Massa}
+
 
 

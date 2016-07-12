@@ -19,7 +19,6 @@
 }
 \value{predicted values.}
 
-\author{Todos nosotros}
+\author{Jairo Cugliari, Andres Castrillejo, Fernando Massa}
 
 \seealso{ \link[stats]{predict.lm} \link{hong}}
-\examples{}

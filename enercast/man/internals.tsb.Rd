@@ -21,8 +21,5 @@ acft(ar=NULL,AR1=NULL,AR2=NULL,ma=NULL,MA1=NULL,MA2=NULL,s1=24,s2=168,k=500)
   \item{k}{ es el numero de rezagos}
 
 }
-\details{}
-\value{}
-\references{}
-\author{Todos Nosotros}
+\author{Jairo Cugliari, Andres Castrillejo, Fernando Massa}
 \seealso{ \code{\link{tsb}}}
