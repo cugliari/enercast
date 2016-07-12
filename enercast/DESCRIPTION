@@ -8,8 +8,6 @@ Author:Jairo Cugliari, Andres Castrillejo, Fernando Massa
 Maintainer: Jairo Cugliari <Jairo.Cugliari@univ-lyon2.fr>
 Imports: hexbin, RColorBrewer, FKF, wavethresh, Rcpp, Rwave, cluster, doParallel, randomForest
 Description: The package provides with description, modeling, prediction and diagnostic tools to analyze electricity demand data.
-VignetteBuilder: knitr
 Suggests: knitr 
 License: GPL
 LinkingTo:Rcpp
-
