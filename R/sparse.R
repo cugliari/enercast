@@ -11,11 +11,12 @@ library("spams")
 # INPUT
 # 
 # train.data ... an NxM matrix where each column is an hour by hour variable (load, temperature, etc.)
+# nmode ........ normalization mode
 # natoms ....... number of atoms in target dictionary
 # penalty ...... penalty term to be used
 #
 
-sparse <- function(train.data, natoms, lambda) {
+sparse <- function(train.data, nmode,natoms, lambda) {
   
   #
   # we rearrange the data as 48xM vectors, each representing 24 hourly samples of the M input variables
@@ -27,33 +28,49 @@ sparse <- function(train.data, natoms, lambda) {
   N <- n / T 
   M = T*m
   #
-  # normalize this variable to be N(0,Identity)
+  # normalize
   #
-  Xi <- train.data[,1]
-  dim(Xi) <- c(T,N)
-  ui <- rowMeans(Xi)
-  Si <- var(t(Xi))
-  Wi <- chol(Si)
-  whitening <- list(Wi)
-  centering  <- list(ui)
-  for (i in 1:N) {
-    Xi[,i] <- solve(Wi,Xi[,i] - ui)
-  }
-  X <- Xi  
-  for (i in 2:m) {
-    print(i)
-    Xi <- train.data[,i]
-    dim(Xi) <- c(T,N)
-    ui <- rowMeans(Xi)
-    Si <- var(t(Xi))
-    Wi <- chol(Si)
-    whitening[[i]] <- Wi
-    centering[[i]] <- ui
-    for (i in 1:N) {
-      Xi[,i] <- solve(Wi,Xi[,i] - ui)
-    }
-    dim(Xi) <- c(T,N)
-    X <- rbind(X,Xi)
+  X <- matrix(nrow=M,ncol=N)
+  # scaling <- list()
+  # centering <- list()
+  for (i in 1:m) {
+     Xi <- train.data[,i]
+     dim(Xi) <- c(T,N)
+  #   if (nmode == 'whitening') {
+  #     ui <- rowMeans(Xi)
+  #     Si <- var(t(Xi))
+  #     Wi <- chol(Si)
+  #     scaling[[i]] <- Wi
+  #     centering[[i]] <- ui
+  #     for (j in 1:N) {
+  #       Xi[,j] <- solve(Wi,Xi[,j] - ui)
+  #     }
+  #   } else if (nmode == 'diag') {
+  #     ui <- rowMeans(Xi)
+  #     Wi <- diag(apply(Xi,1,var))
+  #     scaling[[i]] <- Wi
+  #     centering[[i]] <- ui
+  #     for (j in 1:N) {
+  #       Xi[,j] <- solve(Wi,Xi[,j] - ui)
+  #     }
+  #   } else if (nmode == 'max') {
+  #     ui <- rowMeans(Xi)
+  #     Wi <- diag(rep(abs(max(Xi)),T))
+  #     scaling[[i]] <- Wi
+  #     centering[[i]] <- ui
+  #     for (j in 1:N) {
+  #       Xi[,j] <- solve(Wi,Xi[,j] - ui)
+  #     }
+  #   } else if (nmode == 'none') {
+  #     ui <- rep(0,T)
+  #     Wi <- diag(rep(1,T))
+  #     scaling[[i]] <- Wi
+  #     centering[[i]] <- ui
+  #     for (j in 1:N) {
+  #       Xi[,j] <- solve(Wi,Xi[,j] - ui)
+  #     }
+  #   }
+     X[((i-1)*T+1):(i*T),] <- Xi
   }
   # then two-day samples are created by concatenating X with itself, shifted one day back
   X <- rbind(X[,1:(N-1)],X[,2:N])
@@ -72,9 +89,12 @@ sparse <- function(train.data, natoms, lambda) {
   #  'FISTAMODE' = 6
   
   D <- spams.trainDL(X, lambda1= lambda, K=natoms, mode='PENALTY',return_model= FALSE, verbose= FALSE)
+  D0 <- D[1:M,]
+  D1 <- D[(M+1):(2*M),]
   
   # store the resulting dictionary and penalty as object attributes
-  sparse <- list(dictionary=D,M=M,lambda=lambda,centering=centering,whitening=whitening)
+  #sparse <- list(Dtoday=D0,Dtomorrow=D1,M=M,lambda=lambda,nmode=nmode,centering=centering,scaling=scaling)
+  sparse <- list(Dtoday=D0,Dtomorrow=D1,M=M,lambda=lambda)
   class(sparse) <- c('sparse_class')
   return(sparse)
 }
