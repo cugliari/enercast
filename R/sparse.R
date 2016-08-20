@@ -16,8 +16,7 @@ library("spams")
 # penalty ...... penalty term to be used
 #
 
-sparse <- function(train.data, nmode,natoms, lambda) {
-  
+sparse <- function(train.data, natoms, lambda) {
   #
   # we rearrange the data as 48xM vectors, each representing 24 hourly samples of the M input variables
   #
@@ -31,63 +30,19 @@ sparse <- function(train.data, nmode,natoms, lambda) {
   # normalize
   #
   X <- matrix(nrow=M,ncol=N)
-  # scaling <- list()
-  # centering <- list()
   for (i in 1:m) {
-     Xi <- train.data[,i]
-     dim(Xi) <- c(T,N)
-  #   if (nmode == 'whitening') {
-  #     ui <- rowMeans(Xi)
-  #     Si <- var(t(Xi))
-  #     Wi <- chol(Si)
-  #     scaling[[i]] <- Wi
-  #     centering[[i]] <- ui
-  #     for (j in 1:N) {
-  #       Xi[,j] <- solve(Wi,Xi[,j] - ui)
-  #     }
-  #   } else if (nmode == 'diag') {
-  #     ui <- rowMeans(Xi)
-  #     Wi <- diag(apply(Xi,1,var))
-  #     scaling[[i]] <- Wi
-  #     centering[[i]] <- ui
-  #     for (j in 1:N) {
-  #       Xi[,j] <- solve(Wi,Xi[,j] - ui)
-  #     }
-  #   } else if (nmode == 'max') {
-  #     ui <- rowMeans(Xi)
-  #     Wi <- diag(rep(abs(max(Xi)),T))
-  #     scaling[[i]] <- Wi
-  #     centering[[i]] <- ui
-  #     for (j in 1:N) {
-  #       Xi[,j] <- solve(Wi,Xi[,j] - ui)
-  #     }
-  #   } else if (nmode == 'none') {
-  #     ui <- rep(0,T)
-  #     Wi <- diag(rep(1,T))
-  #     scaling[[i]] <- Wi
-  #     centering[[i]] <- ui
-  #     for (j in 1:N) {
-  #       Xi[,j] <- solve(Wi,Xi[,j] - ui)
-  #     }
-  #   }
-     X[((i-1)*T+1):(i*T),] <- Xi
+    Xi <- train.data[,i]
+    dim(Xi) <- c(T,N)
+    X[((i-1)*T+1):(i*T),] <- Xi
   }
+  #
+  # normalize each column
+  #
+  #
   # then two-day samples are created by concatenating X with itself, shifted one day back
+  #
   X <- rbind(X[,1:(N-1)],X[,2:N])
-  # Train a sparse model of natoms elements using train.data 
-  # as training data, lambda as the regularization parameter and
-  # mode as the regularization mode (PENALTY, LAGRANGIAN, ERROR)
-  # mode=PENALTY means that D will minimize ||X-D*A|| + lambda||A||_1
-  # together with A (which is discarded for now)
-  # possible values
-  #  'L1COEFFS' = 0,
-  #  'L2ERROR' = 1,
-  #  'PENALTY' = 2,
-  #  'SPARSITY' = 3,
-  #  'L2ERROR2' = 4,
-  #  'PENALTY2' = 5,
-  #  'FISTAMODE' = 6
-  
+  X <- scale(X)
   D <- spams.trainDL(X, lambda1= lambda, K=natoms, mode='PENALTY',return_model= FALSE, verbose= FALSE)
   D0 <- D[1:M,]
   D1 <- D[(M+1):(2*M),]
