@@ -17,17 +17,17 @@ BugReports: https://github.com/cugliari/enercast/issues
 Depends:
     R (>= 3.1.0)
 Imports:
-    cluster, 
     doParallel, 
     FKF, 
     hexbin, 
     Rcpp, 
-    Rwave, 
     RColorBrewer, 
     randomForest
 VignetteBuilder: knitr
 Suggests: 
+    cluster, 
     knitr, 
+    Rwave, 
     spams,
     wavethresh
 License: LGPL
