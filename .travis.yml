@@ -22,3 +22,5 @@ notifications:
   email:
     on_success: change
     on_failure: change
+
+_R_CHECK_FORCE_SUGGESTS_=false

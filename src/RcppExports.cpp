@@ -47,3 +47,15 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+
+static const R_CallMethodDef CallEntries[] = {
+    {"enercast_DistWav", (DL_FUNC) &enercast_DistWav, 1},
+    {"enercast_prevkerfon", (DL_FUNC) &enercast_prevkerfon, 5},
+    {"enercast_CVkerfon", (DL_FUNC) &enercast_CVkerfon, 6},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_enercast(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
+}

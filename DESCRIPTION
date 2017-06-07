@@ -23,7 +23,7 @@ Imports:
     Rcpp, 
     RColorBrewer, 
     randomForest
-VignetteBuilder: knitr
+VignetteBuilder: VignetteBuilder: knitr
 Suggests: 
     cluster, 
     knitr, 
@@ -31,6 +31,5 @@ Suggests:
     spams,
     wavethresh
 License: LGPL
-LinkingTo:Rcpp
-VignetteBuilder: knitr
-RoxygenNote: 5.0.1
+LinkingTo: Rcpp
+RoxygenNote: 6.0.1
