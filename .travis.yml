@@ -23,6 +23,8 @@ notifications:
     on_success: change
     on_failure: change
 
+latex: false
+pandoc: false
 
 env:
     _R_CHECK_FORCE_SUGGESTS=false

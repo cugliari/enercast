@@ -23,7 +23,7 @@ Imports:
     Rcpp, 
     RColorBrewer, 
     randomForest
-VignetteBuilder: VignetteBuilder: knitr
+VignetteBuilder: knitr
 Suggests: 
     cluster, 
     knitr, 
