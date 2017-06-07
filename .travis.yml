@@ -33,5 +33,7 @@ r_binary_packages:
 before_install:
     - wget -O spams.tar.gz http://spams-devel.gforge.inria.fr/hitcounter2.php?file=file/36615/spams-R-v2.6-2017-03-22.tar.gz
     - tar xvf spams.tar.gz
-    - R CMD build spams-R/spams
-    - R CMD INSTALL spams_2.6.tar.gz
+    - R CMD INSTALL spams-R/spams
+
+
+
