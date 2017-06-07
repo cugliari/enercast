@@ -1,3 +1,15 @@
+#' predict.sparse
+#' 
+#' Compute prediction for sparse model
+#'
+#' @param sp 
+#' @param new.data 
+#' @param delta 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 predict.sparse <- function(sp, new.data, delta = 24 ) {
   # DEPENDENCY: Julien Mairal SPAMS for R
   #library("spams")
