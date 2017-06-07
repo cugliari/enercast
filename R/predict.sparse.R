@@ -1,7 +1,12 @@
-# DEPENDENCY: Julien Mairal SPAMS for R
-library("spams")
-
 predict.sparse <- function(sp, new.data, delta = 24 ) {
+  # DEPENDENCY: Julien Mairal SPAMS for R
+  #library("spams")
+
+  if (!requireNamespace("spams", quietly = TRUE)) {
+    stop("Package spams is needed for this function to work. Please install it.",
+         call. = FALSE)
+  }
+  
   if (inherits(sp, 'sparse_class', TRUE) != 1)
     stop('Object is not of sparse_class')
   
@@ -30,7 +35,7 @@ predict.sparse <- function(sp, new.data, delta = 24 ) {
   for (j in 1:N) {
     X[, j] <- (X[,j] - cm[j]) / (2 * cv[j])
   }
-  A <- spams.lasso(X, sp$Dtoday, lambda1 = sp$lambda, mode = 'PENALTY')
+  A <- spams::spams.lasso(X, sp$Dtoday, lambda1 = sp$lambda, mode = 'PENALTY')
   X1 <- sp$Dtomorrow %*% A
   for (j in 1:N) {
     X1[,j] <- 2 * cv[j] * X1[, j] + cm[j]

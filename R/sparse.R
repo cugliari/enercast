@@ -1,4 +1,15 @@
-library("spams")
+#' sparse
+#'
+#' @param train.data an NxM matrix where each column is an hour by hour variable (load, temperature, etc.)
+#' @param natoms normalization mode
+#' @param lambda number of atoms in target dictionary
+#' @param delta penalty term to be used
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#library("spams")
 #
 # The predictive model is based on a "colinearity" argument between one day and the other
 # Each traning sample consists of two consecutive days (Ltoday,Ltomorrow). A dictionary is then learnt to represent
@@ -15,8 +26,13 @@ library("spams")
 # natoms ....... number of atoms in target dictionary
 # penalty ...... penalty term to be used
 #
-
 sparse <- function(train.data, natoms, lambda, delta = 24) {
+
+  if (!requireNamespace("spams", quietly = TRUE)) {
+    stop("Package spams is needed for this function to work. Please install it.",
+         call. = FALSE)
+  }
+  
   #
   # Rearrange the data as 2 * delta x M vectors (e.g. each representing 
   # 24 hourly samples of the M input variables)

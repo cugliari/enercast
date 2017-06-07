@@ -2,14 +2,35 @@ Package: enercast
 Type: Package
 Title: Electrical energy forecast tools
 Version: 0.1
-Date: 2015-11-19
-Authors@R:c(person('Jairo Cugliari',role=c('aut','cre'),email='Jairo.Cugliari@univ-lyon2.fr'),person('Andres Castrillejo',role='aut',email='castrillejoandres@gmail.com'),person('Fernando Massa',role='aut',email='fmassa@iesta.edu.uy'),person('Ignacio Ramirez',role='aut',email='nacho@fing.edu.uy')) 
-Author:Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
-Maintainer: Jairo Cugliari <Jairo.Cugliari@univ-lyon2.fr>
-Depends: hexbin, RColorBrewer, FKF, wavethresh, Rcpp, Rwave, cluster, doParallel, randomForest, spams
-Description: The package provides with description, modeling, prediction and diagnostic tools to analyze electricity demand data.
+Date: 2017-05-19
+Authors@R: c(person('Jairo Cugliari', role = c('aut', 'cre'),
+                    email = 'Jairo.Cugliari@univ-lyon2.fr'),
+             person('Andres Castrillejo', role = 'aut',
+                    email = 'castrillejoandres@gmail.com'),
+             person('Fernando Massa', role = 'aut',
+                    email = 'fmassa@iesta.edu.uy'),
+             person('Ignacio Ramirez', role = 'aut',
+                    email = 'nacho@fing.edu.uy')) 
+Description: The package provides with description, modeling, prediction and 
+    diagnostic tools to analyze electricity demand data
+BugReports: https://github.com/cugliari/enercast/issues
+Depends:
+    R (>= 3.1.0)
+Imports:
+    cluster, 
+    doParallel, 
+    FKF, 
+    hexbin, 
+    Rcpp, 
+    Rwave, 
+    RColorBrewer, 
+    randomForest
 VignetteBuilder: knitr
-Suggests: knitr 
-License: GPL
+Suggests: 
+    knitr, 
+    spams,
+    wavethresh
+License: LGPL
 LinkingTo:Rcpp
-
+VignetteBuilder: knitr
+RoxygenNote: 5.0.1
