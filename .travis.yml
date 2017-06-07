@@ -23,4 +23,6 @@ notifications:
     on_success: change
     on_failure: change
 
-_R_CHECK_FORCE_SUGGESTS_=false
+
+env:
+    _R_CHECK_FORCE_SUGGESTS=false
