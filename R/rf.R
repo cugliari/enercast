@@ -1,17 +1,28 @@
-rf <- function(y='load', data, for.each='hour', cores= detectCores()-1){
-  cls <- makeCluster(cores)
-  registerDoParallel(cls)
-  on.exit(stopCluster(cls))
+#' rf
+#'
+#' Sets up random forest model for prediction
+#'
+#' @param y 
+#' @param data 
+#' @param for.each 
+#' @param cores 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+rf <- function(y = 'load', data, for.each = 'hour', 
+               cores = parallel::detectCores() - 1){
+  cls <- parallel::makeCluster(cores)
+  parallel::registerDoParallel(cls)
+  on.exit(parallel::stopCluster(cls))
   K <- unique(data[,for.each])
-  RES <- foreach(j = K ,.packages='randomForest') %dopar% {
-      data.j <- data[data[,for.each] == j, names(data)!=for.each]
-      XX <- data.j[ , names(data.j)!=eval(y)]
-      YY <- data.j[,eval(y)] 
-      rf <- randomForest(y=YY, x=XX, na.action=na.omit)}
+  RES <- foreach::foreach(j = K ,.packages = 'randomForest') %dopar% {
+      data.j <- data[data[,for.each] == j, names(data) != for.each]
+      XX <- data.j[ , names(data.j) != eval(y)]
+      YY <- data.j[, eval(y)] 
+      rf <- randomForest::randomForest(y = YY, x = XX, na.action = na.omit)}
   names(RES) <- K
   return(RES)
 }
-
-
-
 
