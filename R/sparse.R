@@ -70,7 +70,7 @@ sparse <- function(train.data, natoms, lambda, delta = 24) {
   #
   X <- rbind(X[,1:(N - 1)], X[, 2:N])
   X <- scale(X)
-  D <- spams.trainDL(X, lambda1 = lambda, K = natoms, mode = 'PENALTY',
+  D <- spams::spams.trainDL(X, lambda1 = lambda, K = natoms, mode = 'PENALTY',
                      return_model = FALSE, verbose = FALSE)
   D0 <- D[1:M, ]
   D1 <- D[(M + 1):(2 * M),]
