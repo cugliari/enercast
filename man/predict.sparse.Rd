@@ -13,6 +13,12 @@
 
 \item{delta}{}
 }
+\value{
+...
+}
 \description{
 Compute prediction for sparse model
+}
+\examples{
+3
 }

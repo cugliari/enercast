@@ -6,10 +6,10 @@
 #' @param new.data 
 #' @param delta 
 #'
-#' @return
+#' @return ...
 #' @export
 #'
-#' @examples
+#' @examples 3
 predict.sparse <- function(sp, new.data, delta = 24 ) {
   # DEPENDENCY: Julien Mairal SPAMS for R
   #library("spams")
