@@ -6,13 +6,11 @@
 #' @param new.data 
 #' @param delta 
 #'
-#' @return
+#' @return ...
 #' @export
 #'
-#' @examples
+#' @examples 3
 predict.sparse <- function(sp, new.data, delta = 24 ) {
-  # DEPENDENCY: Julien Mairal SPAMS for R
-  #library("spams")
 
   if (!requireNamespace("spams", quietly = TRUE)) {
     stop("Package spams is needed for this function to work. Please install it.",
@@ -36,7 +34,7 @@ predict.sparse <- function(sp, new.data, delta = 24 ) {
     #      Xi[,j] <- solve(sp$scaling[[i]],Xi[,j] - sp$centering[[i]])
     #    }
     dim(Xi) <- c(delta, N)
-    X[((i - 1) * delta + 1):(i * T),] <- Xi
+    X[((i - 1) * delta + 1):(i * delta),] <- Xi
   }
   #
   # trick: normalize but by twice the variance

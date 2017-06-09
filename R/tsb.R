@@ -42,7 +42,7 @@ tsb <- function(yt, p = 1, d = 1, q = 1, P1 = 1, D1 = 0, Q1 = 1, P2 = 0, D2 = 1,
 
 	param <- c(ar, AR1, AR2, ma, MA1, MA2)
 
-	par <- nlminb(start = param, objective = invento2, yt = yt, 
+	par <- nlminb(start = param, objective = loss, yt = yt, 
 	              p = p, d = d, q = q, 
 	              P1 = P1, D1 = D1, Q1 = Q1, P2 = P2, D2 = D2, Q2 = Q2,
 	              s1 = s1, s2 = s2, k = k)
