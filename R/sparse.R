@@ -18,25 +18,6 @@
 #' @param delta penalty term to be used
 #'
 #' @return a list with dictionaries
-#' @examples 3
-#' @export
-#library("spams")
-#
-# The predictive model is based on a "colinearity" argument between one day and the other
-# Each traning sample consists of two consecutive days (Ltoday,Ltomorrow). A dictionary is then learnt to represent
-# a set of training samples with that form. The dictionary will then be an ensemble of two-day atoms, the upper part 
-# corresponding to "todays", and the lower part to "tomorrows", [Dtod^T Dtom^T]^T
-# To predict tomorrow's load, w represent today's load Ltod in terms of Dtod and obtain a set of coefficients a
-# Whe then estimate Ltom as Dtom*a. 
-# The underlying hypothesis is that "a" would be essentially the same if we had asked to represent the whole vector [Ltod,Ltom] 
-#
-# INPUT
-# 
-# train.data ... an NxM matrix where each column is an hour by hour variable (load, temperature, etc.)
-# nmode ........ normalization mode
-# natoms ....... number of atoms in target dictionary
-# penalty ...... penalty term to be used
-
 sparse <- function(train.data, natoms, lambda, delta = 24) {
 
   if (!requireNamespace("spams", quietly = TRUE)) {

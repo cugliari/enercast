@@ -1,3 +1,17 @@
+#' trigon
+#'
+#' Create new variables
+#' 
+#' @param data  \code{data.frame} contains year, month, day and hour columns
+#' @param frecH numero de dias por ciclo. diario=1, semanal=7 o anual=365}
+#' @param n numero de filas del output 
+#' @param w numero de observaciones por dia (24 horario; 48 demihorario...)
+#' @param q cantidad de variables generadas
+#'
+#' @return matrix with \code{q} trigonometric variables
+#' @export
+#' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
+#'
 trigon <- function(data,frecH=1,n=nrow(data),w=24,q=3){
 
     is.leapyear <- function(year){

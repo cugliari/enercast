@@ -1,3 +1,13 @@
+#' rcs
+#'
+#' Construct splines
+#' 
+#' @param x numeric vector
+#' @param m knots number (default=5)
+#' @param nod knots placement
+#'
+#' @return matrix with normalized splines
+#' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
 rcs <- function(x,m=5,nod=NULL){
     if(is.null(nod))
         nod <- quantile(x,probs=seq(0,1,1/(m+1)))[-c(1,m+2)]

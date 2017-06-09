@@ -1,3 +1,25 @@
+#' newvars.rf
+#'
+#' Construct new variables for Random Forest Model
+#' 
+#' @param data Data frame with 'load' and 'temp' columns
+#' @param type Character. 'load.lag', 'temp.lag', 'temp.sqcb', 'temp.desv', 'load.desv'.
+#' @param t Lags
+#' @param ... ...
+#' @return data.frame
+#' @details
+#' \describe{
+#'   \item{load.lag}{lags of load}
+#'   \item{temp.lag}{lags of temperature}
+#'   \item{temp.sqcb}{temperature square and cubic}
+#'   \item{ temp.desv}{deviation of temperature}
+#'   \item{load.desv}{deviation of load}
+#' }
+#'
+#' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
+#' @references{Hong, T. and Wang, P. and Lee Willis, H. 2011 A naive multiple linear regression benchmark for short term load forecasting. In \emph{Power and Energy Society General Meeting, 2011 IEEE}, 1--6.}
+#' @references{Hong, T. and Pinson, P.and Fan, S. 2014 Global energy forecasting competition 2012. \emph{International Journal of Forecasting}, \bold{30(2)}:357--363}
+#'
 newvars.rf <- function(data,type,t,...){
     xrezaga <- function(vec,t,nom='xtemp'){
         n <- length(vec) ;     mtz <- matrix(0,n,t) ;    diag(mtz) <- 1

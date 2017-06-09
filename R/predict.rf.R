@@ -1,3 +1,13 @@
+#' predict.rf
+#'
+#' Prediction in Random Forest
+#' 
+#' @param listRF List of Random Forest Models
+#' @param newdata New data to predict
+#' @param for.each Character. Variable name of data frequency (i.e. 'hour')
+#' 
+#' @return list
+#' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
 predict.rf <- function(listRF, newdata=NULL, for.each='hour'){
   if(is.null(newdata)){
     PRED.RF <- lapply(listRF,predict)}

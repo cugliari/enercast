@@ -1,3 +1,12 @@
+#' predict.tsb
+#'
+#' Predicted values for Time Series Benchmark Model
+#' 
+#' @param mod An ARIMA model object fitting from \code{tsb}
+#' @param steps Number of steps to forecast
+#' @return vector of predicted values
+#' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
+#' @seealso \link{tsb} \link{makeARIMA}
 predict.tsb <- function(mod,steps=24){
 
 	dem<-mod$data
