@@ -1,4 +1,14 @@
-    pred.ssm <- function(ssm.obj.i){
+#' predict.ssm
+#'
+#' Prediction in Univariate State Space Model
+#' 
+#' @param ssm.obj Estimated object from \code{ssm}
+#' @param newdata data
+#' @param for.each 'hour'
+#'
+#' @return list
+#' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
+pred.ssm <- function(ssm.obj.i){
       yt <- ssm.obj.i$yt
       xa.pred <- ssm.obj.i$xa.pred
       xf.pred <- ssm.obj.i$xf.pred

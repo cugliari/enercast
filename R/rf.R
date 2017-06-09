@@ -2,15 +2,18 @@
 #'
 #' Sets up random forest model for prediction
 #'
-#' @param y 
-#' @param data 
-#' @param for.each 
-#' @param cores 
+#' @param y Character. Variable name.
+#' @param data data.frame
+#' @param for.each Character. Variable name.
+#' @param cores Parallel execution
 #'
 #' @return
 #' @export
 #'
+#' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
 #' @examples
+# \usage{rf(y = "load", data, for.each = "hour", cores = detectCores() - 1)}
+
 rf <- function(y = 'load', data, for.each = 'hour', 
                cores = parallel::detectCores() - 1){
   cls <- parallel::makeCluster(cores)

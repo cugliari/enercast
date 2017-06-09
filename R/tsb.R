@@ -2,23 +2,34 @@
 #'
 #' Time series benchmark
 #'
-#' @param yt 
-#' @param p 
-#' @param d 
-#' @param q 
-#' @param P1 
-#' @param D1 
-#' @param Q1 
-#' @param P2 
-#' @param D2 
-#' @param Q2 
-#' @param s1 
-#' @param s2 
-#' @param k 
+#' @param yt load data sequence. type numeric.
+#' @param p AR order. type numeric.
+#' @param d Degree of differencing. type numeric.
+#' @param q MA order. type numeric.
+#' @param P1 AR order. type numeric.
+#' @param D1 Degree of differencing. type numeric.
+#' @param Q1 MA order. type numeric.
+#' @param P2 AR order. type numeric.
+#' @param D2 Degree of differencing. type numeric.
+#' @param Q2 MA order. type numeric.
+#' @param s1 Seasonal frequencies. type numeric.
+#' @param s2 Seasonal frequencies. type numeric.
+#' @param k number of lags
 #'
-#' @return
-#' @export
+#' @return A list with ARIMA estimated model
+#' \describe{
+#'   \item{ar}{(reg=ar,est1=AR1,est2=AR2)}
+#'   \item{ma}{(reg=ma,est1=MA1,est2=MA2)}
+#'   \item{d}{(d,D1,D2)}
+#'   \item{frec}{}
+#'   \item{dif}{}
+#'   \item{iter}{}
+#'   \item{data}{load data}
+#' }
+#' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
+#' @references{Brockwell, P.J.and Davis, R.A. 1991 \emph{Time Series: theory and methods} 2nd ed. Springer.}
 #'
+#' @seealso \code{\link{predict.tsb}}
 #' @examples
 tsb <- function(yt, p = 1, d = 1, q = 1, P1 = 1, D1 = 0, Q1 = 1, P2 = 0, D2 = 1,
                 Q2 = 1, s1 = 24, s2 = 168, k = 200){
