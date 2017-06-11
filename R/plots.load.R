@@ -1,6 +1,6 @@
-plot.load.global <- function(yt,dataux=NULL,...){
+plot.load.global <- function(yt, dataux = NULL, ...){
     if(is.null(dataux)){
-        plot(yt,type='l',ylab='Load',xlab='Time',...)
+        plot(yt, type = 'l',ylab='Load',xlab='Time',...)
 
     }
     if(!is.null(dataux)){
@@ -93,14 +93,12 @@ plot.load.corr <- function(yt,data=NULL,nw=3,...){
 }
 
 
-
-plot.temp <- function(data,group=NULL,...){
-    form <- data$load~data$temp|group
-    if (is.null(group))
-        form <- data$load~data$temp
-        
-    rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
-    hexbinplot(form,colramp=rf,xlab="temperature",ylab="load",colorkey=FALSE,aspect=1)
+plot.temp <- function(data, group, ...){
+  if (missing(group)) group <- 1
+  rf <- colorRampPalette(rev(RColorBrewer::brewer.pal(11,'Spectral')))
+  hexbin::hexbinplot(data$load ~ data$temp | group, 
+                     colramp = rf, xlab = "temperature", ylab = "load",
+                     colorkey = FALSE) #, aspect=1)
 }
 
 

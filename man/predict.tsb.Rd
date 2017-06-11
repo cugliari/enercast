@@ -2,18 +2,24 @@
 % Please edit documentation in R/predict.tsb.R
 \name{predict.tsb}
 \alias{predict.tsb}
-\title{Title}
+\title{predict.tsb}
 \usage{
 \method{predict}{tsb}(mod, steps = 24)
 }
 \arguments{
-\item{mod}{}
+\item{mod}{An ARIMA model object fitting from \code{tsb}}
 
-\item{steps}{}
+\item{steps}{Number of steps to forecast}
+}
+\value{
+vector of predicted values
 }
 \description{
-Title
+Predicted values for Time Series Benchmark Model
 }
-\examples{
-3
+\seealso{
+\link{tsb} \link{makeARIMA}
+}
+\author{
+Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
 }

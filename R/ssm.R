@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-#' Title
-#'
-#' @param formulaXa 
-#' @param formulaXf 
-#' @param data 
-#' @param ini 
-#' @param for.each 
-#' @param cores 
-#'
-#' @return
-#' @export
-#'
-#' @examples
-ssm <- function(formulaXa, formulaXf = NULL, data, ini = NULL,
-                for.each = 'hour', cores = parallel::detectCores() - 1){
-  cls <- parallel::makeCluster(cores)
-  parallel::registerDoParallel(cls)
-  on.exit(parallel::stopCluster(cls)) ##
-=======
 #' ssm
 #'
 #' Fit an univariate State Space Model
@@ -36,11 +16,11 @@ ssm <- function(formulaXa, formulaXf = NULL, data, ini = NULL,
 #' @references{Dordonnat, V. and Koopman, S. J. and Ooms, M. 2012 Dynamic factors in periodic time-varying regressions with an application to hourly electricity load modelling. \emph{Computational Statistics & Data Analysis}, \bold{56(11)}:3134--3152.}
 #' @examples
 #' @export
-ssm <- function(formulaXa,formulaXf=NULL, data, ini=NULL,for.each='hour', cores= detectCores()-1){
-  cls <- makeCluster(cores)
-  registerDoParallel(cls)
-  on.exit(stopCluster(cls)) ##
->>>>>>> e7ccaf51a9866643d51484e38ed43fb777a9c88c
+ssm <- function(formulaXa, formulaXf = NULL, data, ini = NULL,
+                for.each = 'hour', cores = parallel::detectCores() - 1){
+  cls <- parallel::makeCluster(cores)
+  parallel::registerDoParallel(cls)
+  on.exit(parallel::stopCluster(cls)) ##
   h <- unique(data[,for.each])
   k <- length(h)
   res <- foreach::foreach(j = 1:k, .final = function(x) setNames(x,h),

@@ -8,14 +8,17 @@ rf(y = "load", data, for.each = "hour", cores = parallel::detectCores() -
   1)
 }
 \arguments{
-\item{y}{}
+\item{y}{Character. Variable name.}
 
-\item{data}{}
+\item{data}{data.frame}
 
-\item{for.each}{}
+\item{for.each}{Character. Variable name.}
 
-\item{cores}{}
+\item{cores}{Parallel execution}
 }
 \description{
 Sets up random forest model for prediction
+}
+\author{
+Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
 }

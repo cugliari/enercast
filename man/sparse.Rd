@@ -31,6 +31,3 @@ and obtain a set of coefficients a
 Whe then estimate Ltom as Dtom*a. 
 The underlying hypothesis is that "a" would be essentially the same if we had asked to represent the whole vector [Ltod,Ltom]
 }
-\examples{
-3
-}
