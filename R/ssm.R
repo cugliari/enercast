@@ -11,9 +11,19 @@
 #' 
 #' @return   fkf.optim      fk list(dt=dt,ct=ct,Tt=Tt,Zt=Zt,a0=a0,P0=P0)
 #' @export
+#' 
+#' @references #' Dordonnat, V. and Koopman, S. J. and Ooms, M. and Dessertaine, 
+#' A. and Collet, J. (2008)  An hourly periodic state space model for modelling 
+#' French national electricity load. \emph{International Journal of  Forecasting}, 
+#' \bold{24(4)}:566--587.
+#' 
+#' Dordonnat, V. and Koopman, S. J. and Ooms, M. (2012) 
+#' Dynamic factors in periodic time-varying regressions with an application to 
+#' hourly electricity load modelling. 
+#' \emph{Computational Statistics & Data Analysis}, \bold{56(11)}:3134--3152.}
+#' 
 #' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
-#' @references{Dordonnat, V. and Koopman, S. J. and Ooms, M. and Dessertaine, A. and Collet, J. 2008 An hourly periodic state space model for modelling French national electricity load. \emph{International Journal of  Forecasting}, \bold{24(4)}:566--587.}
-#' @references{Dordonnat, V. and Koopman, S. J. and Ooms, M. 2012 Dynamic factors in periodic time-varying regressions with an application to hourly electricity load modelling. \emph{Computational Statistics & Data Analysis}, \bold{56(11)}:3134--3152.}
+#' 
 #' @examples
 #' @export
 ssm <- function(formulaXa, formulaXf = NULL, data, ini = NULL,

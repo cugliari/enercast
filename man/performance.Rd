@@ -2,7 +2,7 @@
 % Please edit documentation in R/errors.R
 \name{performance}
 \alias{performance}
-\title{performance}
+\title{Performance measure for a predicted set of values.}
 \usage{
 performance(y, yhat, measure = "rmse")
 }

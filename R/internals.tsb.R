@@ -1,5 +1,3 @@
-
-###
 comb.coef <- function(rv, Sv, s){
 	rn <- length(rv); Sn <- length(Sv)
 	if (rn == 1 & 0 %in% rv) { 

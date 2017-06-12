@@ -1,5 +1,3 @@
-#' performance
-#'
 #' Performance measure for a predicted set of values.  
 #'
 #' @param y vector of observed load
