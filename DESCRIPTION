@@ -28,7 +28,6 @@ Suggests:
     cluster, 
     knitr, 
     Rwave, 
-    spams,
     wavethresh
 License: LGPL
 LinkingTo: Rcpp
