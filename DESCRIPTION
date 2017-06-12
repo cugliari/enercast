@@ -25,9 +25,7 @@ Imports:
     randomForest
 VignetteBuilder: knitr
 Suggests: 
-    cluster, 
     knitr, 
-    Rwave, 
     wavethresh
 License: LGPL
 LinkingTo: Rcpp
