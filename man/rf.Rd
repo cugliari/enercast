@@ -16,6 +16,9 @@ rf(y = "load", data, for.each = "hour", cores = parallel::detectCores() -
 
 \item{cores}{Parallel execution}
 }
+\value{
+A fitted randomforest object
+}
 \description{
 Sets up random forest model for prediction
 }

@@ -1,10 +1,11 @@
-#' Title
+#' predict.ssm
 #'
 #' @param ssm.obj 
 #' @param newdata 
 #' @param for.each 
 #'
-#' @return
+#' @return predicted values
+#' 
 #' @export
 #'
 #' @examples

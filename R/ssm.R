@@ -20,7 +20,7 @@
 #' Dordonnat, V. and Koopman, S. J. and Ooms, M. (2012) 
 #' Dynamic factors in periodic time-varying regressions with an application to 
 #' hourly electricity load modelling. 
-#' \emph{Computational Statistics & Data Analysis}, \bold{56(11)}:3134--3152.}
+#' \emph{Computational Statistics & Data Analysis}, \bold{56(11)}:3134--3152.
 #' 
 #' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
 #' 

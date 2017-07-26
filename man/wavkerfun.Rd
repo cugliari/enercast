@@ -17,6 +17,9 @@ wavkerfun(obj, dist = 1, r, H, EPS = 1e-06)
 
 \item{EPS}{}
 }
+\value{
+fitted wavkerfun model
+}
 \description{
 Using
 }

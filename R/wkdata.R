@@ -1,11 +1,15 @@
-#' Title
+#' wkdata object constructor
 #'
-#' @param X 
+#' Constructs a wkdata object by taking the discrete wavelet transform DWT on 
+#' the daily load curves.
+#'
+#' @param X matrix of load curves (in columns)
 #' @param p 
-#' @param gr 
-#' @param J 
+#' @param gr groups in data (e.g. daytype) 
+#' @param J truncation level (max scale for the DWT)
 #'
-#' @return
+#' @return wkdata object
+#'
 #' @export
 #'
 #' @examples

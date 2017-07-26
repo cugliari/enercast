@@ -2,19 +2,23 @@
 % Please edit documentation in R/wkdata.R
 \name{wkdata}
 \alias{wkdata}
-\title{Title}
+\title{wkdata object constructor}
 \usage{
 wkdata(X, p, gr, J)
 }
 \arguments{
-\item{X}{}
+\item{X}{matrix of load curves (in columns)}
 
 \item{p}{}
 
-\item{gr}{}
+\item{gr}{groups in data (e.g. daytype)}
 
-\item{J}{}
+\item{J}{truncation level (max scale for the DWT)}
+}
+\value{
+wkdata object
 }
 \description{
-Title
+Constructs a wkdata object by taking the discrete wavelet transform DWT on 
+the daily load curves.
 }

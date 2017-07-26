@@ -7,7 +7,8 @@
 #' @param for.each Character. Variable name.
 #' @param cores Parallel execution
 #'
-#' @return
+#' @return A fitted randomforest object
+#'
 #' @export
 #'
 #' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez

@@ -2,7 +2,7 @@
 % Please edit documentation in R/predict.ssm.R
 \name{predict.ssm}
 \alias{predict.ssm}
-\title{Title}
+\title{predict.ssm}
 \usage{
 \method{predict}{ssm}(ssm.obj, newdata, for.each = "hour")
 }
@@ -13,6 +13,9 @@
 
 \item{for.each}{}
 }
+\value{
+predicted values
+}
 \description{
-Title
+predict.ssm
 }

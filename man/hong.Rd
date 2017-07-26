@@ -6,6 +6,18 @@
 \usage{
 hong(data)
 }
+\arguments{
+\item{data}{Data frame with columns:
+\describe{
+  \item{year}{year (...2012, 2013, 2014...)}
+  \item{month}{month (01, 02, ..., 12)}
+  \item{wday}{day of the week (Mon Thu Wed Tue Fri Sat Sun)}  
+  \item{instant}{(01, 02, ..., 24) for hourly data or 
+                 (01, 02, ..., 48) or half hourly data}  
+  \item{temp}{temperature} 
+  \item{load}{electricity loads}  
+}}
+}
 \value{
 An object of class \code{lm}
 }

@@ -1,11 +1,12 @@
-#' Title
+#' Functional wavelet kernal
 #'
-#' @param object 
+#' @param wavkerfun object 
 #' @param ... 
 #' @param newdata 
 #' @param sd 
 #'
-#' @return
+#' @return predicted values
+#' 
 #' @export
 #'
 #' @examples

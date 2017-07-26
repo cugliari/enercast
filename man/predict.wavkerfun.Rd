@@ -2,19 +2,22 @@
 % Please edit documentation in R/predict.wavkerfun.R
 \name{predict.wavkerfun}
 \alias{predict.wavkerfun}
-\title{Title}
+\title{Functional wavelet kernal}
 \usage{
 \method{predict}{wavkerfun}(object, ..., newdata = NULL, sd)
 }
 \arguments{
-\item{object}{}
-
 \item{...}{}
 
 \item{newdata}{}
 
 \item{sd}{}
+
+\item{wavkerfun}{object}
+}
+\value{
+predicted values
 }
 \description{
-Title
+Functional wavelet kernal
 }

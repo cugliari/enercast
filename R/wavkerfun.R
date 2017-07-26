@@ -8,7 +8,8 @@
 #' @param H 
 #' @param EPS 
 #'
-#' @return
+#' @return fitted wavkerfun model
+#' 
 #' @export
 #'
 #' @examples

@@ -4,10 +4,10 @@
 #' @param yhat vector of predicted load
 #' @param measure 
 #' \describe{
-#'   \item{rmse} {Root Mean Square Error: \deqn{rmse(y,\hat{y})=\sqrt{\frac{1}{N}\sum\limits_{t=1}^N (y_t - \hat{y}_t)^2}}}
-#'   \item{mape} {Mean Absolute Percentage Error: \deqn{mape(y,\hat{y})=\frac{1}{N}\sum\limits_{t=1}^N \frac{|y_t - \hat{y}_t|}{|y_t|}}}
-#'   \item{mae} {Mean Absolute Error:\deqn{mae(y,\hat{y}) =\frac{1}{N}\sum\limits_{t=1}^N |y_t - \hat{y}_t|}}
-#'   \item{pdad} {Promedio de Desviacion Absoluta de la Demanda: \deqn{pdad(y,\hat{y})=\frac{1}{N}\sum\limits_{t=1}^N \frac{|y_t - \hat{y}_t|}{\hat{y}}*100}}
+#'   \item{rmse}{Root Mean Square Error: \deqn{rmse(y,\hat{y})=\sqrt{\frac{1}{N}\sum\limits_{t=1}^N (y_t - \hat{y}_t)^2}}}
+#'   \item{mape}{Mean Absolute Percentage Error: \deqn{mape(y,\hat{y})=\frac{1}{N}\sum\limits_{t=1}^N \frac{|y_t - \hat{y}_t|}{|y_t|}}}
+#'   \item{mae}{Mean Absolute Error:\deqn{mae(y,\hat{y}) =\frac{1}{N}\sum\limits_{t=1}^N |y_t - \hat{y}_t|}}
+#'   \item{pdad}{Promedio de Desviacion Absoluta de la Demanda: \deqn{pdad(y,\hat{y})=\frac{1}{N}\sum\limits_{t=1}^N \frac{|y_t - \hat{y}_t|}{\hat{y}}*100}}
 #' }
 #' 
 #' @return single value
