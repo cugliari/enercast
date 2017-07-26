@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // DistWav
 double DistWav(NumericVector u);
-RcppExport SEXP enercast_DistWav(SEXP uSEXP) {
+RcppExport SEXP _enercast_DistWav(SEXP uSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -18,7 +18,7 @@ END_RCPP
 }
 // prevkerfon
 NumericVector prevkerfon(NumericVector serie_x, NumericVector serie_y, NumericVector serie_x0, double h, double EPS);
-RcppExport SEXP enercast_prevkerfon(SEXP serie_xSEXP, SEXP serie_ySEXP, SEXP serie_x0SEXP, SEXP hSEXP, SEXP EPSSEXP) {
+RcppExport SEXP _enercast_prevkerfon(SEXP serie_xSEXP, SEXP serie_ySEXP, SEXP serie_x0SEXP, SEXP hSEXP, SEXP EPSSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -33,7 +33,7 @@ END_RCPP
 }
 // CVkerfon
 double CVkerfon(NumericVector serie_x, NumericVector serie_y, int p, int r, double h, double EPS);
-RcppExport SEXP enercast_CVkerfon(SEXP serie_xSEXP, SEXP serie_ySEXP, SEXP pSEXP, SEXP rSEXP, SEXP hSEXP, SEXP EPSSEXP) {
+RcppExport SEXP _enercast_CVkerfon(SEXP serie_xSEXP, SEXP serie_ySEXP, SEXP pSEXP, SEXP rSEXP, SEXP hSEXP, SEXP EPSSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -49,9 +49,9 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"enercast_DistWav", (DL_FUNC) &enercast_DistWav, 1},
-    {"enercast_prevkerfon", (DL_FUNC) &enercast_prevkerfon, 5},
-    {"enercast_CVkerfon", (DL_FUNC) &enercast_CVkerfon, 6},
+    {"_enercast_DistWav", (DL_FUNC) &_enercast_DistWav, 1},
+    {"_enercast_prevkerfon", (DL_FUNC) &_enercast_prevkerfon, 5},
+    {"_enercast_CVkerfon", (DL_FUNC) &_enercast_CVkerfon, 6},
     {NULL, NULL, 0}
 };
 

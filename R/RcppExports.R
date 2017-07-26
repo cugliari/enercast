@@ -2,14 +2,14 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 DistWav <- function(u) {
-    .Call('enercast_DistWav', PACKAGE = 'enercast', u)
+    .Call('_enercast_DistWav', PACKAGE = 'enercast', u)
 }
 
 prevkerfon <- function(serie_x, serie_y, serie_x0, h, EPS) {
-    .Call('enercast_prevkerfon', PACKAGE = 'enercast', serie_x, serie_y, serie_x0, h, EPS)
+    .Call('_enercast_prevkerfon', PACKAGE = 'enercast', serie_x, serie_y, serie_x0, h, EPS)
 }
 
 CVkerfon <- function(serie_x, serie_y, p, r, h, EPS) {
-    .Call('enercast_CVkerfon', PACKAGE = 'enercast', serie_x, serie_y, p, r, h, EPS)
+    .Call('_enercast_CVkerfon', PACKAGE = 'enercast', serie_x, serie_y, p, r, h, EPS)
 }
 

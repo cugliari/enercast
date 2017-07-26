@@ -6,12 +6,15 @@
 \alias{enercast-package}
 \title{enercast: A package for predicting electricity load.}
 \description{
-The enercast package provides different models to predict the daily electricity load. Models covers
-both endogenous and exogenous variants (e.g. using or not external information as for instance
-meteorological variables).
+The enercast package provides different models to predict the daily
+electricity load. Models covers both endogenous and exogenous variants (e.g.
+using or not external information as for instance meteorological variables).
 }
-\section{enercast models}{
+\section{Exogenous models}{
+ hong, ssm, rf
+}
 
-hong, ssm, ...
+\section{Endogenous models}{
+ tsb, kwf
 }
 
