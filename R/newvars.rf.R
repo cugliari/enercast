@@ -20,6 +20,7 @@
 #' @references{Hong, T. and Wang, P. and Lee Willis, H. 2011 A naive multiple linear regression benchmark for short term load forecasting. In \emph{Power and Energy Society General Meeting, 2011 IEEE}, 1--6.}
 #' @references{Hong, T. and Pinson, P.and Fan, S. 2014 Global energy forecasting competition 2012. \emph{International Journal of Forecasting}, \bold{30(2)}:357--363}
 #'
+#' @export
 newvars.rf <- function(data,type,t,...){
     xrezaga <- function(vec,t,nom='xtemp'){
         n <- length(vec) ;     mtz <- matrix(0,n,t) ;    diag(mtz) <- 1
