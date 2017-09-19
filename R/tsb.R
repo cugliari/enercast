@@ -29,6 +29,7 @@
 #' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
 #' @references{Brockwell, P.J.and Davis, R.A. 1991 \emph{Time Series: theory and methods} 2nd ed. Springer.}
 #'
+#' @export
 #' @seealso \code{\link{predict.tsb}}
 #' @examples
 tsb <- function(yt, p = 1, d = 1, q = 1, P1 = 1, D1 = 0, Q1 = 1, P2 = 0, D2 = 1,

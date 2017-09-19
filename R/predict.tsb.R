@@ -4,14 +4,22 @@
 #' 
 #' @param mod An ARIMA model object fitting from \code{tsb}
 #' @param steps Number of steps to forecast
+#' @param n_run Length of the univariate time series to parse to KalmanRun 
+#'        (must be smaller than the total length of data in mod)
 #' @return vector of predicted values
 #' @author Jairo Cugliari, Andres Castrillejo, Fernando Massa, Ignacio Ramirez
 #' @seealso \link{tsb} \link{makeARIMA}
-predict.tsb <- function(mod, steps = 24){
+#' @export
+predict.tsb <- function(mod, steps = 24, n_run = 1000){
 
 	dem <- mod$data
 	n <- length(dem)
 
+	if (n < n_run) {
+	  n_run <- n - 1 
+	  warning("Not enough data or n_run too large: n_run set as n - 1")
+	}
+	
 	tita <- comb.coef(comb.coef(mod$ma$reg, mod$ma$est1, 24), mod$ma$est2, 168)
 	fi <- comb.coef(mod$ar$reg, mod$ar$est1, 24)
 
@@ -32,10 +40,9 @@ predict.tsb <- function(mod, steps = 24){
 	if (is.null(tita)) tita <- vector('numeric')
         
 	modelo <- makeARIMA(phi = fi, Delta = -delta, theta = tita, SSinit = "Rossignol2011")
-	res <- KalmanRun(dem[(n - 1000):n], mod = modelo)
+	res <- KalmanRun(dem[(n - n_run):n], mod = modelo)
 	modelo$a <- res$states[nrow(res$states), ]
 	pred <- KalmanForecast(steps, modelo)
 	return(pred$pred)
 }
-
 
