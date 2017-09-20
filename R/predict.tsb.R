@@ -40,8 +40,8 @@ predict.tsb <- function(mod, steps = 24, n_run = 1000){
 	if (is.null(tita)) tita <- vector('numeric')
         
 	modelo <- makeARIMA(phi = fi, Delta = -delta, theta = tita, SSinit = "Rossignol2011")
-	res <- KalmanRun(dem[(n - n_run):n], mod = modelo)
-	modelo$a <- res$states[nrow(res$states), ]
+#	res <- KalmanRun(dem[(n - n_run):n], mod = modelo)
+#	modelo$a <- res$states[nrow(res$states), ]
 	pred <- KalmanForecast(steps, modelo)
 	return(pred$pred)
 }

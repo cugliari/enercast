@@ -20,9 +20,10 @@
 #' @export
 # @seealso \code{\link[stats]{predict.lm}}\code{\link{hong}}
 #
-predict.hong <- function(obj.hv, new.data = NULL){
-  if (inherits(obj.hv, 'hong', TRUE) != 2)
-    stop('Object is not of class hong')
-  pred <- predict(object = obj.hv, newdata = new.data)
+predict.hong <- function(obj.hv, newdata = NULL){
+  if (any(class(obj.hv) == "hong")) stop('Object is not of class hong')
+    # more robust than : (inherits(obj.hv, 'hong', TRUE) != 2)
+
+  pred <- predict(object = obj.hv, newdata = newdata)
   return(pred)
 }
