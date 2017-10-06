@@ -5,7 +5,7 @@
 \title{rf}
 \usage{
 rf(y = "load", data, for.each = "hour", cores = parallel::detectCores() -
-  1)
+  1, ...)
 }
 \arguments{
 \item{y}{Character. Variable name.}
@@ -15,6 +15,8 @@ rf(y = "load", data, for.each = "hour", cores = parallel::detectCores() -
 \item{for.each}{Character. Variable name.}
 
 \item{cores}{Parallel execution}
+
+\item{...}{optional extra parameters to be passed to function randomForest}
 }
 \value{
 A fitted randomforest object

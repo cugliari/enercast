@@ -1,5 +1,4 @@
-# enercast
-Electrical energy forecast tools
+# enercast -- Electrical energy forecast tools
 
 Electricity is a key energy component of modern societies. Accurate predictions helps 
 electricity agents to reduce production costs, optimize the use of natural ressources,

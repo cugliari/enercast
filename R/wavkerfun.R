@@ -10,6 +10,9 @@
 #'
 #' @return fitted wavkerfun model
 #' 
+#' @useDynLib 
+#' @importFrom Rcpp sourceCpp
+#' 
 #' @export
 #'
 #' @examples

@@ -4,12 +4,15 @@
 \alias{predict.tsb}
 \title{predict.tsb}
 \usage{
-\method{predict}{tsb}(mod, steps = 24)
+\method{predict}{tsb}(mod, steps = 24, n_run = 1000)
 }
 \arguments{
 \item{mod}{An ARIMA model object fitting from \code{tsb}}
 
 \item{steps}{Number of steps to forecast}
+
+\item{n_run}{Length of the univariate time series to parse to KalmanRun 
+(must be smaller than the total length of data in mod)}
 }
 \value{
 vector of predicted values

@@ -4,7 +4,7 @@
 \alias{predict.hong}
 \title{predict.hong}
 \usage{
-\method{predict}{hong}(obj.hv, new.data = NULL)
+\method{predict}{hong}(obj.hv, newdata = NULL)
 }
 \arguments{
 \item{obj.hv}{Object of class inheriting from use of \code{hong} function.}
