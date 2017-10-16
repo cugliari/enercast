@@ -60,3 +60,8 @@ wavkerfun <-  function(obj, dist = 1, r, H, EPS = 1e-6){
  return(res)
 }
 
+#' @useDynLib enercast
+#' @importFrom Rcpp sourceCpp
+NULL
+
+
