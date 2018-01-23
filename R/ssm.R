@@ -29,7 +29,7 @@
 ssm <- function(formulaXa, formulaXf = NULL, data, ini = NULL,
                 for.each = 'hour', cores = parallel::detectCores() - 1){
   cls <- parallel::makeCluster(cores)
-  parallel::registerDoParallel(cls)
+  doParallel::registerDoParallel(cls)
   on.exit(parallel::stopCluster(cls)) ##
   h <- unique(data[,for.each])
   k <- length(h)
