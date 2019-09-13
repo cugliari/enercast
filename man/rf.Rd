@@ -4,8 +4,8 @@
 \alias{rf}
 \title{rf}
 \usage{
-rf(y = "load", data, for.each = "hour", cores = parallel::detectCores() -
-  1, ...)
+rf(y = "load", data, for.each = "hour",
+  cores = parallel::detectCores() - 1, ...)
 }
 \arguments{
 \item{y}{Character. Variable name.}
